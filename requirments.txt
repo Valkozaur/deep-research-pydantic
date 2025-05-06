@@ -4,3 +4,4 @@ pydantic-ai>=0.1.9
 python-dotenv>=1.0.0  # For loading environment variables
 anthropic>=0.3.0  # For the LLM functionality
 openai>=1.1.0  # For OpenAI/Azure OpenAI support
+pydantic-ai-slim[tavily]

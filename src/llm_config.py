@@ -19,6 +19,7 @@ AZURE_OPENAI_ENDPOINT = get_env_with_prefix("AZURE_OPENAI_ENDPOINT")
 AZURE_OPENAI_DEPLOYMENT = get_env_with_prefix("AZURE_OPENAI_DEPLOYMENT")
 AZURE_OPENAI_API_KEY = get_env_with_prefix("AZURE_OPENAI_API_KEY")
 AZURE_OPENAI_API_VERSION = get_env_with_prefix("AZURE_OPENAI_API_VERSION")
+TAVILY_API_KEY = get_env_with_prefix("TAVILY_API_KEY")
 
 class LLMConfig:
     def __init__(self):
@@ -33,6 +34,8 @@ class LLMConfig:
             AZURE_OPENAI_DEPLOYMENT,  # Using deployment name as model name
             provider=azure_provider,
         )
+
+        self.tavily_api_key = TAVILY_API_KEY
 
 def create_default_config() -> LLMConfig:
     return LLMConfig()
