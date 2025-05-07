@@ -1,6 +1,6 @@
 import asyncio
 import time
-from src.iterative_research import IterativeAgent
+from src.iterative_researcher import IterativeResearcher
 from src.llm_config import create_default_config
 
 async def main():
@@ -14,7 +14,7 @@ async def main():
     max_minutes = 10
     
     print(f"Creating iterative agent with max_iterations={max_iterations}, max_minutes={max_minutes}")
-    agent = IterativeAgent(max_iterations=max_iterations, max_minutes=max_minutes, verbose=True)
+    agent = IterativeResearcher(max_iterations=max_iterations, max_minutes=max_minutes, verbose=True)
     
     # Define the research query
     query = "Write a report on Plato - who was he, what were his main works and what are the main philosophical ideas he's known for"
