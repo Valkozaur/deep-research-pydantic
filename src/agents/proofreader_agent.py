@@ -57,7 +57,7 @@ Guidelines:
 - Include all sources and references that are present in the final report
 """
 
-def init_proof_reader_agent(config: LLMConfig) -> Agent:
+def init_proofreader_agent(config: LLMConfig) -> Agent:
     return Agent(
         name="Proof Reader Agent",
         description="A research expert who proofreads and edits research reports",

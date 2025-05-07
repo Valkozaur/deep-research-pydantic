@@ -25,7 +25,7 @@ from ..llm_config import LLMConfig
 from pydantic_ai import Agent
 from datetime import datetime
 from pydantic import BaseModel, Field
-from src.agents.proof_reader_agent import ReportDraft
+from .proofreader_agent import ReportDraft
 from typing import List, Tuple, Dict
 import re
 
