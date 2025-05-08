@@ -13,13 +13,14 @@ import asyncio
 import time
 import sys
 from pathlib import Path
+from src.llm_config import create_custom_config, create_google_config
+from os import getenv
 
 # Add the src directory to Python path
 sys.path.append(str(Path(__file__).parent.parent))
 
 from src.deep_researcher import DeepResearcher
 from src.llm_config import create_default_config
-
 
 async def main():
     """Run the deep researcher example."""
@@ -29,12 +30,17 @@ async def main():
     # - max_iterations: 3 (for faster example)
     # - max_minutes: 5 (time limit of 5 minutes per section)
     max_iterations = 3
-    max_minutes = 5
-    
+    max_minutes = 15
+
+    config = create_google_config(
+        model_name="gemini-2.0-flash", 
+        api_key=getenv("GOOGLE_API_KEY")
+    )
     print(f"Creating deep researcher with max_iterations={max_iterations}, max_minutes={max_minutes}")
     researcher = DeepResearcher(
         max_iterations=max_iterations, 
-        max_minutes=max_minutes, 
+        max_minutes=max_minutes,
+        config=config,
         verbose=True
     )
     
